@@ -27,9 +27,7 @@
   "devDependencies": {
     "frontmatter-markdown-loader": "^3.4.3",
     "what-input": "^5.2.9"
-  }
-}
-{
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",

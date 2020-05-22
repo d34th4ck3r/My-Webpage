@@ -1,26 +1,44 @@
 body {
 	background-color: #000;
-	color: white;
+	color: #CCC;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .navbar {
 	background-color: #000;
 }
 
-a {
-	font-family: 'Quattrocento', serif;
+.main {
+	font-family: 'Cinzel', serif;
 	color: white;
 	letter-spacing: 0.1rem;
-
 }
+
 
 button:focus {outline:0;}
 
 .navbar-brand {
-	font-family: 'Quattrocento', serif;
+	font-family: 'Cinzel', serif;
 	letter-spacing: 0.25rem;
 }
 
+a {
+	color: #888;
+}
+
+a:hover {
+	color: #AAA;
+}
+
+.page-title {
+	font-size: 50px;
+	color: white;
+	font-family: 'Julius Sans One', sans-serif;
+}
+
+.page-title:hover{
+	color: #888;
+}
 
 .button:hover{
 	background-color: #222;
@@ -36,6 +54,4 @@ header {
 
 img {
 	width: 100px;
-	border: 1px solid white;
-	border-color: rgb(111,111,111);
 }

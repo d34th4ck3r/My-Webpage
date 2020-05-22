@@ -3,9 +3,8 @@ body {
 	color: white;
 }
 
-nav {
+.navbar {
 	background-color: #000;
-	height: 53px;
 }
 
 a {

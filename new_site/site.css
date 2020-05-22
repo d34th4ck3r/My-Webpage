@@ -37,6 +37,10 @@ a:hover {
 	color: #888;
 }
 
+.subtitle {
+	color: #AAA;
+}
+
 .button:hover{
 	background-color: #222;
 	color: #AAA;
@@ -73,4 +77,12 @@ footer a{
     height:1px;
     background:black;
     background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(0%, black));
+}
+
+.node {
+	font-family: 'Source Code Pro', monospace;
+}
+
+.node-btn {
+	font-family: 'Source Code Pro', monospace;
 }

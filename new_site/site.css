@@ -1,6 +1,6 @@
 body {
 	background-color: #000;
-	color: #CCC;
+	color: white;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -14,20 +14,17 @@ body {
 	letter-spacing: 0.1rem;
 }
 
-
-button:focus {outline:0;}
-
 .navbar-brand {
 	font-family: 'Cinzel', serif;
 	letter-spacing: 0.25rem;
 }
 
 a {
-	color: #888;
+	color: white;
 }
 
 a:hover {
-	color: #AAA;
+	color: #CCC;
 }
 
 .page-title {
@@ -67,4 +64,13 @@ footer {
 
 footer a{
 	color: #444;
+}
+
+.sexy_line{ 
+    display:block;
+    border:none;
+    color:white;
+    height:1px;
+    background:black;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(0%, black));
 }

@@ -35,7 +35,7 @@ header {
 }
 
 img {
-	width: 7.5%;
+	width: 100px;
 	border: 1px solid white;
 	border-color: rgb(111,111,111);
 }

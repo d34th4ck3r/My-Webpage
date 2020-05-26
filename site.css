@@ -76,7 +76,7 @@ footer a{
     color:white;
     height:1px;
     background:black;
-    background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(0%, black));
+    background: linear-gradient(to right, #000 , white);
 }
 
 .node {
@@ -84,4 +84,11 @@ footer a{
 }
 
 .node-btn {
+	height: 40px;
+}
+
+.node-btn:hover{
+	background-image: linear-gradient(to right, #000 , #333);
+	color: #AAA;
+	cursor:pointer;
 }

@@ -70,15 +70,6 @@ footer a{
 	color: #444;
 }
 
-.sexy_line{ 
-    display:block;
-    border:none;
-    color:white;
-    height:1px;
-    background:black;
-    background: linear-gradient(to right, #000 , white);
-}
-
 .node {
 	font-family: 'Source Code Pro', monospace;
 }

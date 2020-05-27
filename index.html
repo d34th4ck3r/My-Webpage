@@ -18,7 +18,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
+<body class="d-flex flex-column">
 	<nav class="navbar navbar-expand-lg px-0 py-0">
 		<a class="navbar-brand main button px-5" href="#">GAUTAM BAJAJ</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -63,13 +63,14 @@
 	    			&nbsp;
 	    		</h3>
 	    	</div>
-	    	<div class="row row-cols-1">
+	    	<div class="row row-cols-1 d-none d-md-block">
 	    		<div class="node-btn button d-flex align-items-center" id="about-me" onclick="setCurrentNode(this)">
 	    			<div class="w-100 text-right mr-2" id="about-me-title">
 	    				About Me
 	    			</div>
 	    			<div hidden="true" id="about-me-desc">
-	    				I am a Trilingual(English, 日本語, हिंदी) Software Engineer/Architect, based out of Tokyo, who started writing code at the age of 13 and being writing it ever since. Currently I am working as a Senior Consultant(Data Engineering) for an American Company and advisor for various startups. The buzzwords for me(right now) are: Reinforcement Learning, Kubernetes, and Blockchain Protocols. I frequently write about these topics which I plan to start posting here soon. Beside all the computer science stuff, I also like discussing about Philosophy and Psychology. Feel to send a message, if you want start a discussion on any of these topics. <br/> This website is WIP.
+	    				I am a Trilingual(English, 日本語, हिंदी) Software Engineer/Architect, based out of Tokyo, who started writing code at the age of 13 and being writing it ever since. Currently I am working as a Senior Consultant(Data Engineering) for an American Company and advisor for various startups. The buzzwords for me(right now) are: Reinforcement Learning, Kubernetes, and Blockchain Protocols. I frequently write about these topics which I plan to start posting here soon. Beside all the computer science stuff, I also like discussing about Philosophy and Psychology. Feel to send a message, if you want start a discussion on any of these topics. <br/>
+	    				This website is WIP.
 	    			</div>
 	    		</div>
 	    		<div class="node-btn button d-flex align-items-center" id="work-ex" onclick="setCurrentNode(this)">
@@ -78,7 +79,7 @@
 	    			</div>
 	    			<div hidden="true" id="work-ex-desc">
 	    				Continents I have worked in: North America, Europe, Asia. <br/>
-	    				Companies I have worked in: SoftBank, Square Enix, Wikia, Teradata, Google. <br/>
+	    				Companies I have worked for: SoftBank, Square Enix, Wikia, Teradata, Google. <br/>
 	    			</div>
 	    		</div>
 	    		<div class="node-btn button d-flex align-items-center" id="open-src" onclick="setCurrentNode(this)">
@@ -86,8 +87,7 @@
 	    				Open Source Contributions
 	    			</div>
 	    			<div hidden="true" id="open-src-desc">
-	    				Continents I have worked in: North America, Europe, Asia. <br/>
-	    				Companies I have worked in: SoftBank, Square Enix, Wikia, Teradata, Google. <br/>
+	    				I am active participants in multiple open source projects. You can find me actively hanging out on IRC of Kubernetes, KubeFlow, Django etc. Recently I have started participating in OpenCollective.
 	    			</div>
 	    		</div>
 	    		<div class="node-btn button d-flex align-items-center" id="interests" onclick="setCurrentNode(this)">
@@ -95,8 +95,10 @@
 	    				Interests
 	    			</div>
 	    			<div hidden="true" id="interests-desc">
-	    				Continents I have worked in: North America, Europe, Asia. <br/>
-	    				Companies I have worked in: SoftBank, Square Enix, Wikia, Teradata, Google. <br/>
+	    				- Networks and Security (Pen Testing, Intrution Detection etc) <br/>
+						- Financial Markets (Derivatives, Algorithmic Trading, Options Trading, Quants etc) <br/>
+						- Languages (日本語, हिंदी WIP: 中文, española) <br/>
+						- Middleware (ROS, Linux Kernel etc)
 	    			</div>
 	    		</div>
 	    	</div> 
@@ -127,7 +129,7 @@
 	    </div>
 	  </div>
 	</div>
-	<footer class="footer px-0 w-100">
+	<footer class="footer mt-auto px-0 w-100">
 	  <div class="clearfit mx-0 h-100 px-2">
 	  	<div class="float-left h-100 px-0 d-flex align-items-center">
 	    	<span >© <script>document.write(new Date().getFullYear())</script> Gautam Bajaj</span>

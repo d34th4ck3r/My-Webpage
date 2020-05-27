@@ -58,8 +58,6 @@ img {
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
   background-color: #111;
   color: #444;
   font-size: 12px;

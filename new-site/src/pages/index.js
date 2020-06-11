@@ -2,10 +2,12 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import PersonalInfo from "../components/personal-info"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
 export default function IndexPage({data}) {
+
   return (
     <Layout
     headerData={
@@ -13,26 +15,24 @@ export default function IndexPage({data}) {
       <a href="#profile-pic">
         <Img fluid={data.file.childImageSharp.fluid} style={{width: "100px"}} className="mx-auto border border-secondary rounded-circle" />
       </a>
-      <div class="clearfix">
-        <a href="https://gautambajaj.com/" class="text-decoration-none">
-        <h1 class="page-title">
+      <div className="clearfix">
+        <a href="https://gautambajaj.com/" className="text-decoration-none">
+        <h1 className="page-title">
         Gautam Bajaj
         </h1>
         </a>
       </div>
-      <h3 class="subtitle">
+      <h3 className="subtitle">
         Software Architect<br />
       </h3>
-      <h4 class="subtitle">
+      <h4 className="subtitle">
         Deep Learning & Microservices
       </h4>
     </div>
     }
     >
       <SEO title="Home" />
-      <div style={{color: "white"}} >
-      <h1>bodyChisaldren</h1>
-      </div>
+      <PersonalInfo />
     </Layout>
   )
 }

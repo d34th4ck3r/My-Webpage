@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import PersonalInfo from "../components/personal-info"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
+import Typewriter from 'typewriter-effect';
 
 export default function IndexPage({data}) {
 
@@ -23,7 +24,24 @@ export default function IndexPage({data}) {
         </a>
       </div>
       <h3 className="subtitle">
-        Software Architect<br />
+      <Typewriter onInit={(typewriter) => {
+        typewriter.typeString('Software Architect')
+          .callFunction(() => {
+            console.log('String typed out!');
+          })
+          .pauseFor(2500)
+          .deleteChars(9)
+          .typeString('Engineer')
+          .pauseFor(2500)
+          .typeString('ing Manager')
+          .pauseFor(2500)
+          .deleteAll()
+          .typeString('Data Scientist')
+          .pauseFor(2500)
+          .start();
+      }} options={{
+        loop: true,
+      }} />
       </h3>
       <h4 className="subtitle">
         Deep Learning & Microservices

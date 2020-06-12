@@ -1,16 +1,14 @@
 
 import React from "react";
-import ReactDOM from "react-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons'
+import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons'
 
-class MainPage extends React.Component {
-  constructor(props){
-    super(props);
+class MainPane extends React.Component {
+
+  updateDesc(){
+    return {__html: this.props.nodeDescription};
   }
-
-  updateNodeDesc() {
-    return this.props.nodeDescription;
-  }
-
 
   render() {
     return(
@@ -18,8 +16,7 @@ class MainPage extends React.Component {
         <h3 id="node-heading">
           {this.props.nodeTitle}
         </h3>
-        <span id="node-desc">
-          {this.updateNodeDesc()}
+        <span id="node-desc" dangerouslySetInnerHTML={this.updateDesc()}>
         </span>
       </div>
     )
@@ -36,10 +33,6 @@ export default class PersonalInfo extends React.Component {
       nodeDescription: "I am a Trilingual(English, 日本語, हिंदी) Software Engineer/Architect, based out of Tokyo, who started writing code at the age of 13 and being writing it ever since. Currently I am working as a Senior Software Engineer/Team Lead(Data Engineering) for an American Company and advisor for various startups. The buzzwords for me(right now) are: Reinforcement Learning, Kubernetes, and Blockchain Protocols. I frequently write about these topics which I plan to start posting here soon. Beside all the computer science stuff, I also like discussing about Philosophy and Psychology. Feel to send a message, if you want start a discussion on any of these topics. <br/> \
       This website is WIP."
     }
-  }
-
-  writeNodeFor(element){
-
   }
 
   setCurrentNode(currentElement){
@@ -100,21 +93,30 @@ export default class PersonalInfo extends React.Component {
             </div>
           </div> 
         </div>
-        <MainPage nodeTitle={this.state.nodeTitle} nodeDescription={this.state.nodeDescription} />
+        <MainPane nodeTitle={this.state.nodeTitle} nodeDescription={this.state.nodeDescription} />
         <div className="col-md my-3 my-md-0">
           <h3 className="mb2">Contact</h3>
-          <div className="row row-cols-1">
+          <div className="row row-cols-1 ">
             <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6D%61%69%6C%40%67%61%75%74%61%6D%62%61%6A%61%6A%2E%63%6F%6D" target="_blank" className="col dark-gray width-120 py-2 text-decoration-none">
-              <i className="fa fa-fw fa-2x fa-envelope-square"></i>
-              <span className="h5 header-font">Email</span>
+              <FontAwesomeIcon
+                icon={faEnvelopeSquare}
+                style={{fontSize: `20px`, alignItems: `center`}}
+              />
+              <span className="h5 header-font px-3">Email</span>
             </a>
             <a href="https://www.linkedin.com/in/d34th4ck3r" target="_blank" className="col dark-gray width-120 py-2 text-decoration-none">
-              <i className="fa fa-fw fa-2x fa-linkedin-square"></i>
-            <span className="h5 header-font">LinkedIn</span>
+              <FontAwesomeIcon
+                icon={faLinkedinIn}
+                style={{fontSize: `20px`, alignItems: `center`}}
+              />
+              <span className="h5 header-font px-3">LinkedIn</span>
             </a>
             <a href="https://github.com/d34th4ck3r/" target="_blank" className="col dark-gray width-120 py-2 text-decoration-none">
-              <i className="fa fa-fw fa-2x fa-github-square"></i>
-            <span className="h5 header-font">GitHub</span>
+              <FontAwesomeIcon
+                icon={faGithub}
+                style={{fontSize: `20px`, alignItems: `center`}}
+              />
+              <span className="h5 header-font px-3">GitHub</span>
             </a>
           </div>
         </div>

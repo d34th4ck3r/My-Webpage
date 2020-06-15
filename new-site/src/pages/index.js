@@ -23,7 +23,7 @@ export default function IndexPage({data}) {
         </h1>
         </a>
       </div>
-      <h3 className="subtitle">
+      <h3 className="subtitle" style={{color: `#AAA`}}>
       <Typewriter onInit={(typewriter) => {
         typewriter.typeString('Software Architect')
           .callFunction(() => {

@@ -6,7 +6,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 export default function NavigationBar() {
   return (
     <Nav class="navbar navbar-expand-lg px-0 py-0">
-      <a class="navbar-brand main button px-5" style={{
+      <a class="navbar-brand button px-5" style={{
         	fontFamily: `Cinzel, serif`,
           letterSpacing: `0.25rem`,
       }} href="#brand">

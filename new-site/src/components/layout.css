@@ -7,21 +7,21 @@ body {
 	background-color: #000;
 	color: white;
 	font-family: 'Open Sans', sans-serif;
+	width: 100%;
+	height: 100vh;
+	overflow-x: hidden;
 }
 
-.navbar {
-	background-color: #000;
+#gatsby-focus-wrapper{
+	display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .main {
 	font-family: 'Cinzel', serif;
 	color: white;
 	letter-spacing: 0.1rem;
-}
-
-.navbar-brand {
-	font-family: 'Cinzel', serif;
-	letter-spacing: 0.25rem;
 }
 
 a {
@@ -42,10 +42,6 @@ a:hover {
 	color: #888;
 }
 
-.subtitle {
-	color: #AAA;
-}
-
 .button:hover{
 	background-color: #222;
 	color: #AAA;
@@ -53,17 +49,6 @@ a:hover {
 
 img {
 	width: 100px;
-}
-
-footer {
-  background-color: #111;
-  color: #444;
-  font-size: 12px;
-  height: 30px;
-}
-
-footer a{
-	color: #444;
 }
 
 .node {

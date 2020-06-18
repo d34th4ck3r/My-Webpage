@@ -26,9 +26,6 @@ export default function IndexPage({data}) {
       <h3 className="subtitle" style={{color: `#AAA`}}>
       <Typewriter onInit={(typewriter) => {
         typewriter.typeString('Software Architect')
-          .callFunction(() => {
-            console.log('String typed out!');
-          })
           .pauseFor(2500)
           .deleteChars(9)
           .typeString('Engineer')

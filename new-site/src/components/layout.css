@@ -42,9 +42,12 @@ a:hover {
 	color: #888;
 }
 
-.button:hover{
+.button:hover {
 	background-color: #222;
 	color: #AAA;
+}
+.button:focus {
+	outline: none;
 }
 
 img {
@@ -63,4 +66,8 @@ img {
 	background-image: linear-gradient(to right, #000 , #333);
 	color: #AAA;
 	cursor:pointer;
+}
+
+.collapse {
+	-webkit-transition: all 5s ease-in-out;
 }

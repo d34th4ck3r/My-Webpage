@@ -6,7 +6,6 @@ export default function Header({children}) {
     <header
       style={{
         backgroundColor: `#111`,
-        borderTop: `1px solid white`,
         borderBottom: `1px solid white`,
         borderColor: `rgb(111,111,111)`,
       }}

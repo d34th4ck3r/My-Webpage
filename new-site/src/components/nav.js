@@ -1,35 +1,64 @@
 import React from "react"
-import { Nav } from 'react-bootstrap'
+import { Nav, Navbar } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { SlideDown } from "react-slidedown";
 
-export default function NavigationBar() {
+
+export function MyDropdown(props) {
   return (
-    <Nav class="navbar navbar-expand-lg px-0 py-0">
-      <a class="navbar-brand button px-5" style={{
-        	fontFamily: `Cinzel, serif`,
+    <SlideDown className={'testing'} transitionOnAppear={false}>
+      {props.open ? props.children : null}
+    </SlideDown>
+  )
+}
+
+export default class NavigationBar extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      menu: false
+    };
+    this.toggleMenu = this.toggleMenu.bind(this);
+  }
+
+  toggleMenu(){
+    this.setState({ menu: !this.state.menu })
+  }
+
+  render() {
+
+  const show = (this.state.menu) ? "show" : "" ;
+  return (
+      <Navbar className="px-0 py-0" expand="lg" style={{
+        borderBottom: `1px solid white`,
+        borderColor: `rgb(111,111,111)`,
+      }}>
+        <a className="navbar-brand button px-5" style={{
+          color: `white`,
+          fontFamily: `Cinzel, serif`,
           letterSpacing: `0.25rem`,
-      }} href="#brand">
-        GAUTAM BAJAJ
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-        <span class="navbar-toggler-icon">
+        }} href="#brand">
+          GAUTAM BAJAJ
+        </a>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className="button" >
           <FontAwesomeIcon
             icon={faBars}
-            style={{color:`#AAA`, fontSize:`30px`}} 
+            style={{color:`#AAA`, fontSize:`30px`}}
           />
-        </span>
-      </button>
-      <div class="collapse navbar-collapse px-0" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link main button px-5" href="#writing">WRITING</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link main button px-5" href="#projects">PROJECTS</a>
-          </li>
-        </ul>
-      </div>
-	  </Nav>
-  )
+        </Navbar.Toggle>
+        <Navbar.Collapse id="basic-navbar-nav">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <a className="nav-link main button px-5" href="#writing" style={{color: `white`}}>WRITING</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link main button px-5" href="#projects" style={{color: `white`}}>PROJECTS</a>
+            </li>
+          </ul>
+        </Navbar.Collapse>
+      </Navbar>
+    );
+  }
 }

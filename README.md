@@ -2,7 +2,7 @@
   Gautam Bajaj Home Page
 </h1>
 
-This is the code for [Gautam Bajaj](www.gautambajaj.com)'s website.
+This is the code for [Gautam Bajaj](https://gautambajaj.com)'s website.
 
 ## 🚀 Quick start
 

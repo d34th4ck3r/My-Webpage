@@ -14,7 +14,7 @@ export default function Footer(){
       </div>
       <div className="float-right h-100 px-2 d-flex align-items-center">
         Inspired From: 
-        <a href="https://www.ybrikman.com/" target="_blank" class="col dark-gray width-120 py-2 px-1" style={{
+        <a href="https://www.ybrikman.com/" target="_blank" rel="noopener noreferrer" className="col dark-gray width-120 py-2 px-1" style={{
           color: `#444`
         }}>
           <span>	

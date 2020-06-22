@@ -4,3 +4,4 @@ out
 .next
 public
 *.code-workspace
+.cache

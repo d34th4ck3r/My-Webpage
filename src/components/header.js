@@ -9,7 +9,7 @@ export default function Header({children}) {
         borderBottom: `1px solid white`,
         borderColor: `rgb(111,111,111)`,
       }}
-      class="text-center align-center py-5"
+      className="text-center align-center py-5"
     >
       {children}
     </header>

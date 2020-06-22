@@ -13,9 +13,7 @@ export default function IndexPage({data}) {
     <Layout
     headerData={
       <div>
-      <a href="#profile-pic">
-        <Img fluid={data.file.childImageSharp.fluid} style={{width: "100px"}} className="mx-auto border border-secondary rounded-circle" />
-      </a>
+      <Img fluid={data.file.childImageSharp.fluid} style={{width: "100px"}} className="mx-auto border border-secondary rounded-circle" />
       <div className="clearfix">
         <a href="https://gautambajaj.com/" className="text-decoration-none">
         <h1 className="page-title">

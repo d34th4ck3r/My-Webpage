@@ -10,7 +10,7 @@ export default function Footer(){
       height: `30px`
     }}>
       <div className="float-left h-100 px-2 d-flex align-items-center">
-        <span >© <script>document.write(new Date().getFullYear())</script> Gautam Bajaj</span>
+        <span>© {(new Date().getFullYear())} Gautam Bajaj</span>
       </div>
       <div className="float-right h-100 px-2 d-flex align-items-center">
         Inspired From: 

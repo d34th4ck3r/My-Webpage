@@ -87,7 +87,7 @@ export default class PersonalInfo extends React.Component {
               - Financial Markets (Derivatives, Algorithmic Trading, Options Trading, Quants etc) <br/>
               - Languages (日本語, हिंदी WIP: 中文, española) <br/>
               - Middleware (ROS, Linux Kernel etc)
-            </div>
+            </div> 
           </div>
         </div> 
       </div>

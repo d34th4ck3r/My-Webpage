@@ -36,10 +36,10 @@ export default function NavigationBar() {
       <Navbar.Collapse id="basic-navbar-nav">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            <a className="nav-link main button px-5" href="#writing" style={{color: `white`}}>WRITING</a>
+            <a className="nav-link main button px-5" href="/writing" style={{color: `white`}}>WRITING</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link main button px-5" href="#projects" style={{color: `white`}}>PROJECTS</a>
+            <a className="nav-link main button px-5" href="/projects" style={{color: `white`}}>PROJECTS</a>
           </li>
         </ul>
       </Navbar.Collapse>

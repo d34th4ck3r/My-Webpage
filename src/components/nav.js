@@ -25,7 +25,7 @@ export default function NavigationBar() {
         color: `white`,
         fontFamily: `Cinzel, serif`,
         letterSpacing: `0.25rem`,
-      }} href="/">
+      }} to={'/'}>
         GAUTAM BAJAJ
       </Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" className="button" >

@@ -15,7 +15,7 @@ export default function IndexPage({data}) {
       <div>
       <Img fluid={data.file.childImageSharp.fluid} style={{width: "100px"}} className="mx-auto border border-secondary rounded-circle" />
       <div className="clearfix">
-        <Link href="/" className="text-decoration-none">
+        <Link to={'/'} className="text-decoration-none">
         <h1 className="page-title">
         Gautam Bajaj
         </h1>

@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import { Navbar } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
@@ -20,13 +21,13 @@ export default function NavigationBar() {
       borderBottom: `1px solid white`,
       borderColor: `rgb(111,111,111)`,
     }}>
-      <a className="navbar-brand button px-5" style={{
+      <Link className="navbar-brand button px-5" style={{
         color: `white`,
         fontFamily: `Cinzel, serif`,
         letterSpacing: `0.25rem`,
       }} href="/">
         GAUTAM BAJAJ
-      </a>
+      </Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" className="button" >
         <FontAwesomeIcon
           icon={faBars}
@@ -36,10 +37,14 @@ export default function NavigationBar() {
       <Navbar.Collapse id="basic-navbar-nav">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            <a className="nav-link main button px-5" href="/writing" style={{color: `white`}}>WRITING</a>
+            <Link className="nav-link main button px-5" to={'/writing'} style={{color: `white`}}>
+              WRITING
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link main button px-5" href="/projects" style={{color: `white`}}>PROJECTS</a>
+            <Link className="nav-link main button px-5" to={'/projects'} style={{color: `white`}}>
+              PROJECTS
+            </Link>
           </li>
         </ul>
       </Navbar.Collapse>

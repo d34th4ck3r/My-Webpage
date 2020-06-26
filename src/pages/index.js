@@ -3,7 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PersonalInfo from "../components/personal-info"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import Typewriter from 'typewriter-effect';
 
@@ -15,11 +15,11 @@ export default function IndexPage({data}) {
       <div>
       <Img fluid={data.file.childImageSharp.fluid} style={{width: "100px"}} className="mx-auto border border-secondary rounded-circle" />
       <div className="clearfix">
-        <a href="/" className="text-decoration-none">
+        <Link href="/" className="text-decoration-none">
         <h1 className="page-title">
         Gautam Bajaj
         </h1>
-        </a>
+        </Link>
       </div>
       <h3 className="subtitle" style={{color: `#AAA`}}>
       <Typewriter onInit={(typewriter) => {

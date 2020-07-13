@@ -1,8 +1,8 @@
 <h1 align="center">
-  Gautam Bajaj Home Page
+    <a href='https://gautambajaj.com'>
+        Gautam Bajaj
+    </a>
 </h1>
-
-This is the code for [Gautam Bajaj](https://gautambajaj.com)'s website.
 
 ## 🚀 Quick start
 

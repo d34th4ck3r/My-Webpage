@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `gautam-bajaj-home-page`,
+        short_name: `gautam-bajaj`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -27,8 +27,41 @@ module.exports = {
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-source-github-api`,
+      options: {
+        token: "<token-goes-here>",
+        variables: {},
+        graphQLQuery: `
+        {
+          user(login: "d34th4ck3r") {
+            id
+            repositories(last: 100, orderBy: {direction: DESC, field: CREATED_AT}) {
+              edges {
+                node {
+                  description
+                  projectsUrl
+                  createdAt
+                  name
+                  object(expression: "master:README.md") {
+                    ... on Blob {
+                      text
+                    }
+                  }
+                  languages(last: 100) {
+                    edges {
+                      node {
+                        name
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        `
+      }
+    },
   ],
 }

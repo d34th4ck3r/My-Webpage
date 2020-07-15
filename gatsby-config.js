@@ -28,40 +28,15 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-github-api`,
+      resolve: `gatsby-source-graphql`,
       options: {
-        token: "<token-goes-here>",
-        variables: {},
-        graphQLQuery: `
-        {
-          user(login: "d34th4ck3r") {
-            id
-            repositories(last: 100, orderBy: {direction: DESC, field: CREATED_AT}) {
-              edges {
-                node {
-                  description
-                  projectsUrl
-                  createdAt
-                  name
-                  object(expression: "master:README.md") {
-                    ... on Blob {
-                      text
-                    }
-                  }
-                  languages(last: 100) {
-                    edges {
-                      node {
-                        name
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-        `
-      }
+        typeName: `GitHub`,
+        fieldName: `github`,
+        url: `https://api.github.com/graphql`,
+        headers: {
+          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        },
+      },
     },
   ],
 }

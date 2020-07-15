@@ -1,10 +1,9 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Link } from "gatsby"
-import Img from "gatsby-image"
+import { Link, graphql } from "gatsby"
 
-export default function ProjectsPage() {
+export default function ProjectsPage({data}) {
   return (
     <Layout
     headerData={
@@ -24,9 +23,27 @@ export default function ProjectsPage() {
     >
       <SEO title="Projects" />
       <div className="m-auto">
-        <h1>Work In Progress</h1>
-        <p> I plan to update this place with a list of projects I have worked on</p>
+        {data.github.viewer.repositories.nodes.map( (node) => (
+          <p>
+          {node? node.name : "asd"}
+          </p>
+        ))}
       </div>
     </Layout>
   )
 }
+
+export const query = graphql`
+query GithubQuery {
+  github {
+    viewer {
+      name
+      repositories(last: 20) {
+        nodes {
+          name
+        }
+      }
+    }
+  }
+}
+`

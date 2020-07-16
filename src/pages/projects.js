@@ -22,11 +22,37 @@ export default function ProjectsPage({data}) {
     }
     >
       <SEO title="Projects" />
-      <div className="m-auto">
+      <div className="mx-auto my-5" style={{
+        width: `500px`
+      }}>
         {data.github.viewer.repositories.nodes.map( (node) => (
-          <p>
-          {node? node.name : "asd"}
-          </p>
+        <div className="my-5">
+        { node.languages.nodes && node.description ?
+        <div>
+          <div className="mx-auto">
+            <a href={node.url}>
+              <h5 style={{
+                color: `#AAA`
+              }}>
+                {node.name}
+              </h5>
+            </a>
+          </div>
+          {/* <ul>
+            {node.languages.nodes.map( (language) => (
+              <li>#{language.name}</li>
+            ))}
+          </ul> */}
+          <div className="my-3">
+            {node.description}
+          </div>
+          <hr style={{
+            color: `white`
+          }}/>
+        </div>
+        : ''}
+
+        </div>
         ))}
       </div>
     </Layout>
@@ -38,12 +64,18 @@ query GithubQuery {
   github {
     viewer {
       name
-      repositories(last: 20) {
+      repositories(first: 20, isFork: false, orderBy: {field: UPDATED_AT, direction: DESC}) {
         nodes {
           name
+          languages(last: 10) {
+            nodes {
+              name
+            }
+          }
+          url
+          description
         }
       }
     }
   }
-}
-`
+}`

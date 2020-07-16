@@ -23,31 +23,36 @@ export default function ProjectsPage({data}) {
     >
       <SEO title="Projects" />
       <div className="mx-auto my-5" style={{
-        width: `500px`
+        width: `750px`
       }}>
         {data.github.viewer.repositories.nodes.map( (node) => (
-        <div className="my-5">
+        <div className="my-3">
         { node.languages.nodes && node.description ?
         <div>
-          <div className="mx-auto">
-            <a href={node.url}>
-              <h5 style={{
-                color: `#AAA`
-              }}>
-                {node.name}
-              </h5>
-            </a>
+          <div className="clearfix mx-auto">
+            <div className="float-left">
+              <a href={node.url}>
+                <h5 style={{
+                  color: `#AAA`
+                }}>
+                  {node.name}
+                </h5>
+              </a>
+            </div>
+            <div className="float-right my-1" style={{
+              fontSize: `10px`,
+              color: `#999`
+            }}>
+              {node.languages.nodes.map( (language) => (
+                <span className="mx-2">{language.name}</span>
+              ))}
+            </div>
           </div>
-          {/* <ul>
-            {node.languages.nodes.map( (language) => (
-              <li>#{language.name}</li>
-            ))}
-          </ul> */}
-          <div className="my-3">
+          <div>
             {node.description}
           </div>
           <hr style={{
-            color: `white`
+            backgroundColor: `white`,
           }}/>
         </div>
         : ''}
@@ -64,7 +69,7 @@ query GithubQuery {
   github {
     viewer {
       name
-      repositories(first: 20, isFork: false, orderBy: {field: UPDATED_AT, direction: DESC}) {
+      repositories(first: 30, isFork: false, orderBy: {field: UPDATED_AT, direction: DESC}) {
         nodes {
           name
           languages(last: 10) {

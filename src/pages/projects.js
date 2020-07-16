@@ -16,7 +16,9 @@ export default function ProjectsPage({data}) {
         </Link>
       </div>
       <h4 className="subtitle" style={{color: `#AAA`}}>
-        These are my Open Source Projects.
+        Need help with AI or Architecture? <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6D%61%69%6C%40%67%61%75%74%61%6D%62%61%6A%61%6A%2E%63%6F%6D"  target="_blank" rel="noopener noreferrer">
+        Reach out to me.
+        </a>
       </h4>
     </div>
     }

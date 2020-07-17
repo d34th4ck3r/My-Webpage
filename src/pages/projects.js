@@ -25,37 +25,42 @@ export default function ProjectsPage({data}) {
     >
       <SEO title="Projects" />
       <div className="mx-auto my-5" style={{
-        width: `750px`
+        width: `50%`
       }}>
         {data.github.viewer.repositories.nodes.map( (node) => (
         <div className="my-3">
-        { node.languages.nodes && node.description ?
+        { node.description ?
         <div>
-          <div className="clearfix mx-auto">
-            <div className="float-left">
-              <a href={node.url}>
-                <h5 style={{
-                  color: `#AAA`
-                }}>
-                  {node.name}
-                </h5>
-              </a>
+          <div className="mx-1">
+            <div className="mx-auto d-flex align-items-center">
+              <div className="align-items-center">
+                <a href={node.url} className="text-decoration-none">
+                  <h5 className="align-items-center">
+                    {node.name}
+                  </h5>
+                </a>
+              </div>
+              <div className="align-items-center ml-auto" style={{
+                fontSize: `13px`,
+                color: `#999`
+              }}>
+                {node.languages.nodes.map( (language) => (
+                  <span className="mx-2">{language.name}</span>
+                ))}
+              </div>
             </div>
-            <div className="float-right my-1" style={{
-              fontSize: `10px`,
-              color: `#999`
-            }}>
-              {node.languages.nodes.map( (language) => (
-                <span className="mx-2">{language.name}</span>
-              ))}
+            <div className="my-2" style={{
+                fontSize: `15px`,
+                color: `#AAA`
+              }}>
+              {node.description}
             </div>
           </div>
           <div>
-            {node.description}
+            <hr style={{
+              backgroundColor: `white`,
+            }}/>
           </div>
-          <hr style={{
-            backgroundColor: `white`,
-          }}/>
         </div>
         : ''}
 

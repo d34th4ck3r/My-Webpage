@@ -34,7 +34,7 @@ export default function ProjectsPage({data}) {
           <div className="mx-1">
             <div className="mx-auto d-flex align-items-center">
               <div className="align-items-center">
-                <a href={node.url} className="text-decoration-none">
+                <a href={node.url} className="text-decoration-none" target="_blank" rel="noopener noreferrer">
                   <h5 className="align-items-center">
                     {node.name}
                   </h5>

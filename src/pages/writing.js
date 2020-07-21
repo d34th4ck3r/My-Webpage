@@ -50,13 +50,11 @@ export default function WritingPage({data}) {
                   color: `#AAA`
                 }}>
                 <div>
-                  
                 </div>
                 <div>
                   {node.excerpt}
                 </div>
               </div>
-              
             </div>
             <div>
               <hr style={{

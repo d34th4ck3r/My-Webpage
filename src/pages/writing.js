@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Link, graphql } from "gatsby"
 
-export default function WritingPage() {
+export default function WritingPage({data}) {
   return (
     <Layout
     headerData={
@@ -24,10 +24,69 @@ export default function WritingPage() {
     }
     >
       <SEO title="Writing" />
-      <div className="m-auto">
-        <h1>Work In Progress</h1>
-        <p>I plan to update this place with a list of articles I have written</p>
+      <div className="mx-auto my-5" style={{
+        width: `50%`
+      }}>
+        {data.allMarkdownRemark.edges.map( ({node}) => (
+          <div>
+            <div className="mx-1">
+              <div className="mx-auto">
+                  <a className="text-decoration-none" target="_blank" rel="noopener noreferrer">
+                    <h5 className="align-items-center">
+                      {node.frontmatter.title}
+                    </h5>
+                  </a>
+              </div>
+              <div style={{
+                  fontSize: `13px`,
+                  color: `#999`
+              }}>
+                {node.frontmatter.tags.map( (tag) => (
+                  <span>#{tag} </span>
+              ))}
+              </div>
+              <div className="my-2" style={{
+                  fontSize: `15px`,
+                  color: `#AAA`
+                }}>
+                <div>
+                  
+                </div>
+                <div>
+                  {node.excerpt}
+                </div>
+              </div>
+              
+            </div>
+            <div>
+              <hr style={{
+                backgroundColor: `white`,
+              }}/>
+            </div>
+          </div>
+        ))}
       </div>
     </Layout>
   )
 }
+
+export const query = graphql`
+query Articles {
+  allMarkdownRemark(sort: {order: DESC, fields: fileAbsolutePath}) {
+    edges {
+      node {
+        frontmatter {
+          title
+          tags
+        }
+        parent {
+          ... on File {
+            modifiedTime
+            birthTime
+          }
+        }
+        excerpt
+      }
+    }
+  }
+}`

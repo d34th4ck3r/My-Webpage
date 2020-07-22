@@ -45,7 +45,7 @@ export default function ProjectsPage({data}) {
                 color: `#999`
               }}>
                 {node.languages.nodes.map( (language) => (
-                  <span className="mx-2">{language.name}</span>
+                  <span className="ml-2"><u>{language.name}</u></span>
                 ))}
               </div>
             </div>

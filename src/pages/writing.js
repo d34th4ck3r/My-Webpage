@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Link, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 export default function WritingPage({data}) {
   return (
@@ -31,7 +32,7 @@ export default function WritingPage({data}) {
           <div>
             <div className="mx-1">
               <div className="mx-auto">
-                  <a className="text-decoration-none" target="_blank" rel="noopener noreferrer">
+                  <a href='###' className="text-decoration-none">
                     <h5 className="align-items-center">
                       {node.frontmatter.title}
                     </h5>
@@ -42,19 +43,31 @@ export default function WritingPage({data}) {
                   color: `#999`
               }}>
                 {node.frontmatter.tags.map( (tag) => (
-                  <span>#{tag} </span>
+                  <span className="mr-2"><u>{tag}</u></span>
               ))}
               </div>
-              <div className="my-2" style={{
+              { node.frontmatter.thumbnail ?
+                <div className="container my-2" style={{
+                    fontSize: `15px`,
+                    color: `#AAA`
+                  }}>
+                  <div class="row">
+                    <div className="col-mx-auto my-1" >
+                      <Img fluid={node.frontmatter.thumbnail.childImageSharp.fluid} style={{width: "200px", height: "100px"}} />
+                    </div>
+                    <div className="col ">
+                      {node.excerpt}
+                    </div>
+                  </div>
+                </div>
+              :
+                <div className="my-2" style={{
                   fontSize: `15px`,
                   color: `#AAA`
                 }}>
-                <div>
-                </div>
-                <div>
                   {node.excerpt}
                 </div>
-              </div>
+              }
             </div>
             <div>
               <hr style={{
@@ -76,6 +89,13 @@ query Articles {
         frontmatter {
           title
           tags
+          thumbnail {
+            childImageSharp {
+              fluid{
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
         parent {
           ... on File {
@@ -83,7 +103,7 @@ query Articles {
             birthTime
           }
         }
-        excerpt
+        excerpt(pruneLength: 400)
       }
     }
   }

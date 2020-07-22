@@ -67,7 +67,7 @@ export default class PersonalInfo extends React.Component {
             </div>
             <div hidden={true} id="work-ex-desc">
               Continents I have worked in: North America, Europe, Asia. <br/>
-              Companies I have worked for: SoftBank, Square Enix, Wikia, Teradata, Google. <br/>
+              Companies I have worked for: SoftBank, Square Enix, Wikia, Teradata. <br/>
             </div>
           </div>
           <div className="node-btn button d-flex align-items-center" role="button" tabIndex={-1} id="open-src" onClick={(e) => this.setCurrentNode(e)} onKeyPress={this.handleKeyPress}>

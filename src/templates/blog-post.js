@@ -10,7 +10,11 @@ export default function BlogPost({data}) {
     headerData={
       <div>
         <div className="clearfix mx-5">
-          <h1 className="page-title">
+          <h1 style={{
+            margin: "0 auto",
+            maxWidth: "900px",
+            fontFamily: "Lora, serif",
+          }}>
             {post.frontmatter.title}
           </h1>
         </div>
@@ -20,6 +24,8 @@ export default function BlogPost({data}) {
       <div dangerouslySetInnerHTML={{__html: post.html}} style={{
         margin: "0 auto",
         maxWidth: "700px",
+        fontFamily: "Lora, serif",
+        fontSize: "18px"
       }} className="my-5"></div>
     </Layout>
   )

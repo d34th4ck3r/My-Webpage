@@ -32,11 +32,11 @@ export default function WritingPage({data}) {
           <div>
             <div className="mx-1">
               <div className="mx-auto">
-                  <a href='###' className="text-decoration-none">
+                  <Link to={node.fields.slug} className="text-decoration-none">
                     <h5 className="align-items-center">
                       {node.frontmatter.title}
                     </h5>
-                  </a>
+                  </Link>
               </div>
               <div style={{
                   fontSize: `13px`,
@@ -104,6 +104,9 @@ query Articles {
           }
         }
         excerpt(pruneLength: 400)
+        fields {
+          slug
+        }
       }
     }
   }

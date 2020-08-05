@@ -13,7 +13,7 @@ export default function BlogPost({data}) {
           <h1 style={{
             margin: "0 auto",
             maxWidth: "900px",
-            fontFamily: "Lora, serif",
+            fontFamily: "Julius Sans One, sans-serif",
           }}>
             {post.frontmatter.title}
           </h1>
@@ -24,8 +24,8 @@ export default function BlogPost({data}) {
       <div dangerouslySetInnerHTML={{__html: post.html}} style={{
         margin: "0 auto",
         maxWidth: "700px",
-        fontFamily: "Lora, serif",
-        fontSize: "18px"
+        fontFamily: "Noto Serif TC, serif",
+        fontSize: "18px",
       }} className="my-5"></div>
     </Layout>
   )

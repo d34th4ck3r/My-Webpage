@@ -1,10 +1,15 @@
 import React from "react"
 import Layout from "../components/layout"
-import { auto } from "@popperjs/core"
+import { graphql } from 'gatsby'
+import { MDXProvider } from "@mdx-js/react"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import { Link } from "gatsby"
+
+const shortcodes = { Link } // Provide common components here
 
 
 export default function BlogPost({data}) {
-  const post = data.markdownRemark
+  const post = data.mdx
   return (
     <Layout
     headerData={
@@ -21,20 +26,24 @@ export default function BlogPost({data}) {
       </div>
     }
     >
-      <div dangerouslySetInnerHTML={{__html: post.html}} style={{
+      <div style={{
         margin: "0 auto",
         maxWidth: "700px",
         fontFamily: "Noto Serif TC, serif",
         fontSize: "18px",
-      }} className="my-5"></div>
+        }} className="my-5">
+        <MDXProvider components={shortcodes}>
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </MDXProvider>
+      </div>
     </Layout>
   )
 }
 
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(fields: { slug: { eq: $slug } }) {
+      body
       frontmatter {
         title
       }

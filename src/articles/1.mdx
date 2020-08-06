@@ -34,13 +34,19 @@ Similarly, to remove all the containers that are not presently active:
 docker container prune
 These command can itself help clear up a substantial amount of hard-disk. However, in certain cases, these commands aren't enough and we need to investigate more.
 Specifically, if it's a file inside docker container taking a lot of space then we need to enter inside docker container to access the file. In order to gain access to console of a docker container, we can execute the command bash using docker exec :
+
+```
 docker exec -it <container-name> bash
+```
+
 This command will land us inside docker container and we can continue our investigation. However, when we have memory overload, we can't use this command to access as it gives us error saying no space left on device . In times like these we have to access the container from the VM without actually logging in.
 Overlay Driver
 OverlayFS is a union file system inspired from AUFS. There are two drivers for OverlayFS: overlay and overlay2. Here we will be talking about overlay.
 In case, you're wondering where does Docker stores the data by default on Linux, its /var/lib/docker so in case we want to completely reset the docker a good idea is to completely wipe out and start from the beginning.
 However, the folder of interest in our case is /var/lib/docker/overlay , if you enter this folder you'll notice a bunch of long string name for folder. Each of these correspond to different images/container. To find the correct mapping between images and these folder we can use the command:
+```
 docker image inspect <image-ID>
+```
 This command should provide metadata related to image in json format. The key we should look for is MergedDir , which gives us the path to container as it is stored inside VM.
-So instead of accessing the container by getting bash access, we can simply access all the files using cd /var/lib/docker/<mergedDirName> and the responsible file for hard-disk overload can be removed.
+So instead of accessing the container by getting bash access, we can simply access all the files using ```cd /var/lib/docker/<mergedDirName>``` and the responsible file for hard-disk overload can be removed.
 Hopefully, this quick guide gives you new perspective and approach to solve your hard-disk related issues with Docker.

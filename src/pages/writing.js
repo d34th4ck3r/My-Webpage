@@ -28,7 +28,7 @@ export default function WritingPage({data}) {
       <div className="mx-auto my-5" style={{
         width: `50%`
       }}>
-        {data.allMarkdownRemark.edges.map( ({node}) => (
+        {data.allMdx.edges.map( ({node}) => (
           <div>
             <div className="mx-1">
               <div className="mx-auto">
@@ -83,7 +83,7 @@ export default function WritingPage({data}) {
 
 export const query = graphql`
 query Articles {
-  allMarkdownRemark(sort: {order: DESC, fields: fileAbsolutePath}) {
+  allMdx(sort: {order: DESC, fields: fileAbsolutePath}) {
     edges {
       node {
         frontmatter {

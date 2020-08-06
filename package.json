@@ -41,6 +41,7 @@
     "react-transition-group": "^4.4.1",
     "react-typing-effect": "^2.0.3",
     "react-typography": "^0.16.19",
+    "theme-ui": "^0.3.1",
     "typewriter-effect": "^2.13.1",
     "typography": "^0.16.19",
     "typography-theme-fairy-gates": "^0.16.19",

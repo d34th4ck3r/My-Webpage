@@ -9,44 +9,72 @@ tags:
 thumbnail: ../images/docker.png
 ---
 This article is intermediate to advanced level quick guide to resolving docker related hard-disk space issues.
+
 Here's a quick description of the technologies we will be talking about in this article:
 Docker: It is a software program OS-level virtualization. Basically, docker provide small accustomed virtual OS that can run independently from host OS and other virtual OS. This gives them the power to be platform independent to a major extend.
 Image: Docker images are often created by combining and modifying standard OS images, which can be downloaded from public repositories.
+
 Container: Docker images become container at runtime. Basically, a running image is a container. In case of Docker, these images run on top of Docker Engine.
+
 An important point to note is that a Docker image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
+
 The size of an image can be in multiple GB's so when we are running these container and downloading images, they could very soon be eating a lot of space that we didn't expect and we are left with the questions like "where is all my hard-disk space gone?!" The thing that makes it even more confusing is that most of the time we are just running two or three containers at a time.
+
 Usually the reason for this is dangling images and containers.
 Dangling images, as the name suggest these are copy of docker images that are not in use anymore but are residing in our hard-disk. Basically, when you've created a new built of the image but it wasn't given a name.
-To list all the Docker images, we can use the command:
-docker images -a
-Similarly, to list all the containers(active or otherwise), we can use:
-docker container list -a
-In order, to know how much exact space is taken by docker images, containers, volumes and cache:
-docker system df
-This command is like running df but for docker system. If we need further details for each image, container etc and to know for what images we have active container for, we can get more verbose version with -v flag.
-docker system df -v
-Notice that this command will list info of all images including dangling images which maybe not useful anymore.
-To clear all dangling images, we can simply do:
-docker image prune
-However, if you want to delete all the images without at least one container associated to them, we need -a tag:
-docker image prune -a
-Similarly, to remove all the containers that are not presently active:
-docker container prune
-These command can itself help clear up a substantial amount of hard-disk. However, in certain cases, these commands aren't enough and we need to investigate more.
-Specifically, if it's a file inside docker container taking a lot of space then we need to enter inside docker container to access the file. In order to gain access to console of a docker container, we can execute the command bash using docker exec :
 
+To list all the Docker images, we can use the command:
+```bash
+docker images -a
 ```
+Similarly, to list all the containers(active or otherwise), we can use:
+```bash
+docker container list -a
+```
+In order, to know how much exact space is taken by docker images, containers, volumes and cache:
+```bash
+docker system df
+```
+
+This command is like running df but for docker system. If we need further details for each image, container etc and to know for what images we have active container for, we can get more verbose version with -v flag.
+```bash
+docker system df -v
+```
+Notice that this command will list info of all images including dangling images which maybe not useful anymore.
+
+To clear all dangling images, we can simply do:
+```bash
+docker image prune
+```
+However, if you want to delete all the images without at least one container associated to them, we need -a tag:
+```bash
+docker image prune -a
+```
+Similarly, to remove all the containers that are not presently active:
+```bash
+docker container prune
+```
+These command can itself help clear up a substantial amount of hard-disk. However, in certain cases, these commands aren't enough and we need to investigate more.
+
+Specifically, if it's a file inside docker container taking a lot of space then we need to enter inside docker container to access the file. In order to gain access to console of a docker container, we can execute the command bash using docker exec :
+```bash
 docker exec -it <container-name> bash
 ```
 
 This command will land us inside docker container and we can continue our investigation. However, when we have memory overload, we can't use this command to access as it gives us error saying no space left on device . In times like these we have to access the container from the VM without actually logging in.
-Overlay Driver
+
+#### Overlay Driver
+
 OverlayFS is a union file system inspired from AUFS. There are two drivers for OverlayFS: overlay and overlay2. Here we will be talking about overlay.
+
 In case, you're wondering where does Docker stores the data by default on Linux, its /var/lib/docker so in case we want to completely reset the docker a good idea is to completely wipe out and start from the beginning.
+
 However, the folder of interest in our case is /var/lib/docker/overlay , if you enter this folder you'll notice a bunch of long string name for folder. Each of these correspond to different images/container. To find the correct mapping between images and these folder we can use the command:
-```
+```bash
 docker image inspect <image-ID>
 ```
 This command should provide metadata related to image in json format. The key we should look for is MergedDir , which gives us the path to container as it is stored inside VM.
-So instead of accessing the container by getting bash access, we can simply access all the files using ```cd /var/lib/docker/<mergedDirName>``` and the responsible file for hard-disk overload can be removed.
+
+So instead of accessing the container by getting bash access, we can simply access all the files using `cd /var/lib/docker/<mergedDirName>` and the responsible file for hard-disk overload can be removed.
+
 Hopefully, this quick guide gives you new perspective and approach to solve your hard-disk related issues with Docker.

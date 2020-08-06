@@ -22,6 +22,12 @@ export default function BlogPost({data}) {
           }}>
             {post.frontmatter.title}
           </h1>
+          <div style={{
+            color: `#AAA`,
+            fontFamily: "Julius Sans One, sans-serif",
+          }}>
+            {post.parent.modifiedTime}
+        </div>
         </div>
       </div>
     }
@@ -46,6 +52,12 @@ export const query = graphql`
       body
       frontmatter {
         title
+      }
+      timeToRead
+      parent {
+        ... on File {
+          modifiedTime(formatString: "MMMM Do, YYYY")
+        }
       }
     }
   }

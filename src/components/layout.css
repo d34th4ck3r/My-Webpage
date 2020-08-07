@@ -76,3 +76,15 @@ img {
 .collapse {
 	-webkit-transition: all 5s ease-in-out;
 }
+
+code {
+	color:  #AAA;
+}
+
+pre {
+	font-family: 'Source Code Pro', monospace;
+	background-color: #AAA;
+	padding: 10px;
+	padding-left: 10px;
+	margin-top: 20px;
+}

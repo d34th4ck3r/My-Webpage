@@ -5,6 +5,7 @@ import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Link } from "gatsby"
 import { ReactTinyLink } from 'react-tiny-link'
+import SEO from "../components/seo"
 
 const shortcodes = { Link, ReactTinyLink }
 
@@ -32,6 +33,7 @@ export default function BlogPost({data}) {
       </div>
     }
     >
+      <SEO title={post.frontmatter.title} />
       <div style={{
         margin: "0 auto",
         maxWidth: "700px",

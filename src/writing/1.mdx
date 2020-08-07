@@ -73,11 +73,11 @@ OverlayFS is a union file system inspired from AUFS. There are two drivers for O
 
 In case, you're wondering where does Docker stores the data by default on Linux, its `/var/lib/docker` so in case we want to completely reset the docker a good idea is to completely wipe out and start from the beginning.
 
-However, the folder of interest in our case is `/var/lib/docker/overlay` , if you enter this folder you'll notice a bunch of long string name for folder. Each of these correspond to different images/container. To find the correct mapping between images and these folder we can use the command:
+However, the folder of interest in our case is `/var/lib/docker/overlay`, if you enter this folder you'll notice a bunch of long string name for folder. Each of these correspond to different images/container. To find the correct mapping between images and these folder we can use the command:
 ```bash
 docker image inspect <image-ID>
 ```
-This command should provide metadata related to image in json format. The key we should look for is `MergedDir` , which gives us the path to container as it is stored inside VM.
+This command should provide metadata related to image in json format. The key we should look for is `MergedDir`, which gives us the path to container as it is stored inside VM.
 
 So instead of accessing the container by getting bash access, we can simply access all the files using `cd /var/lib/docker/<mergedDirName>` and the responsible file for hard-disk overload can be removed.
 

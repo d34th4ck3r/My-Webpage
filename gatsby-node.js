@@ -47,3 +47,18 @@ exports.createPages = async ({graphql, actions}) => {
     })
   })
 }
+
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if(stage === "build-html"){
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: `${process.env.PWD}` + '/node_modules/react-tiny-link/',
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+}

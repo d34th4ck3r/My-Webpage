@@ -4,9 +4,9 @@ import { graphql } from 'gatsby'
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Link } from "gatsby"
-import Microlink from '@microlink/react'
+import { ReactTinyLink } from 'react-tiny-link'
 
-const shortcodes = { Link, Microlink }
+const shortcodes = { Link, ReactTinyLink }
 
 export default function BlogPost({data}) {
   const post = data.mdx

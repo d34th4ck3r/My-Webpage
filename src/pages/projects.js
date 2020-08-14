@@ -23,7 +23,7 @@ export default function ProjectsPage({data}) {
     </div>
     }
     >
-      <SEO title="Projects" />
+      <SEO title="Projects" description="Need help with AI or Architecture? Reach out to me." />
       <div className="mx-auto my-5" style={{
         width: `50%`
       }}>

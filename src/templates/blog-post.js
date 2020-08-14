@@ -33,7 +33,7 @@ export default function BlogPost({data}) {
       </div>
     }
     >
-      <SEO title={post.frontmatter.title} />
+      <SEO title={post.frontmatter.title} description={post.excerpt} />
       <div style={{
         margin: "0 auto",
         maxWidth: "700px",
@@ -54,6 +54,7 @@ export const query = graphql`
       body
       frontmatter {
         title
+        tags
       }
       timeToRead
       parent {
@@ -61,6 +62,7 @@ export const query = graphql`
           modifiedTime(formatString: "MMMM Do, YYYY")
         }
       }
+      excerpt(pruneLength: 400)
     }
   }
 `

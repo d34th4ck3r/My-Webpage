@@ -24,7 +24,7 @@ export default function WritingPage({data}) {
       </div>
     }
     >
-      <SEO title="Writing" />
+      <SEO title="Writing" description="Articles about my epiphanies." />
       <div className="mx-auto my-5" style={{
         width: `50%`
       }}>

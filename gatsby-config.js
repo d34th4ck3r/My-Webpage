@@ -3,6 +3,7 @@ module.exports = {
     title: `Gautam Bajaj`,
     description: `Gautam's internet corner.`,
     author: `@d34th4ck3r`,
+    siteUrl: `https://gautambajaj.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -53,5 +54,7 @@ module.exports = {
         trackingId: `${process.env.GOOGLE_ANALYTICS_TRACKING_ID}`,
       },
     },
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
   ],
 }

@@ -25,7 +25,7 @@ export default function WritingPage({data}) {
     }
     >
       <SEO title="Writing" description="Articles about my epiphanies." />
-      <div className="mx-auto my-5" style={{
+      <div className="mx-3 mx-md-auto my-5" style={{
         maxWidth: "800px"
       }}>
         {data.allMdx.edges.map( ({node}) => (

@@ -35,11 +35,10 @@ export default function BlogPost({data}) {
     >
       <SEO title={post.frontmatter.title} description={post.excerpt} />
       <div style={{
-        margin: "0 auto",
         maxWidth: "800px",
         fontFamily: "Noto Serif TC, serif",
         fontSize: "18px",
-        }} className="my-5">
+        }} className="my-5 mx-3 mx-md-auto">
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{post.body}</MDXRenderer>
         </MDXProvider>

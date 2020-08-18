@@ -24,7 +24,7 @@ export default function ProjectsPage({data}) {
     }
     >
       <SEO title="Projects" description="Need help with AI or Architecture? Reach out to me." />
-      <div className="mx-md-auto my-5" style={{
+      <div className="mx-3 mx-md-auto my-5" style={{
         maxWidth: "800px"
       }} >
         {data.github.viewer.repositories.nodes.map( (node) => (

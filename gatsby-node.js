@@ -8,15 +8,31 @@
 
 const {createFilePath} =  require(`gatsby-source-filesystem`)
 const path = require(`path`)
+const execa = require('execa')
 
 exports.onCreateNode = ({node, getNode, actions}) => {
   const { createNodeField } = actions
+
   if(node.internal.type === `Mdx`){
+
     const slug = createFilePath({node, getNode})
+    const { stdout } = execa.sync('git', [
+      'log',
+      '-1',
+      '--pretty=format:%aI',
+      '--',
+      node.fileAbsolutePath
+    ])
+
     createNodeField({
       node,
       name: `slug`,
       value: `/writing` + slug,
+    })
+    createNodeField({
+      node,
+      name: `lastUpdated`,
+      value: new Date(stdout),
     })
   }
 }

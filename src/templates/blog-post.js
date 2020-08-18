@@ -27,7 +27,7 @@ export default function BlogPost({data}) {
             color: `#AAA`,
             fontFamily: "Julius Sans One, sans-serif",
           }}>
-            {post.parent.birthTime}
+            {post.parent.modifiedTime}
         </div>
         </div>
       </div>
@@ -59,6 +59,7 @@ export const query = graphql`
       parent {
         ... on File {
           birthTime(formatString: "MMMM Do, YYYY")
+          modifiedTime(formatString: "MMMM Do, YYYY")
         }
       }
       excerpt(pruneLength: 400)

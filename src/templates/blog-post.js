@@ -27,7 +27,7 @@ export default function BlogPost({data}) {
             color: `#AAA`,
             fontFamily: "Julius Sans One, sans-serif",
           }}>
-            {post.parent.mtime}
+            {post.fields.lastUpdated}
         </div>
         </div>
       </div>
@@ -56,12 +56,8 @@ export const query = graphql`
         tags
       }
       timeToRead
-      parent {
-        ... on File {
-          birthTime(formatString: "MMMM Do, YYYY")
-          modifiedTime(formatString: "MMMM Do, YYYY")
-          mtime(formatString: "MMMM Do, YYYY")
-        }
+      fields {
+        lastUpdated(formatString: "MMMM Do, YYYY")
       }
       excerpt(pruneLength: 400)
     }

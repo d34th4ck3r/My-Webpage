@@ -2,7 +2,7 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons'
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faLinkedin, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 class MainPane extends React.Component {
 
@@ -100,6 +100,13 @@ export default class PersonalInfo extends React.Component {
               style={{fontSize: `20px`, alignItems: `center`}}
             />
             <span className="h5 header-font px-3">Email</span>
+          </a>
+          <a href="https://twitter.com/d34th4ck3r/" target="_blank" rel="noopener noreferrer" className="col dark-gray width-120 py-2 text-decoration-none">
+            <FontAwesomeIcon
+              icon={faTwitter}
+              style={{fontSize: `20px`, alignItems: `center`}}
+            />
+            <span className="h5 header-font px-3">Twitter</span>
           </a>
           <a href="https://www.linkedin.com/in/d34th4ck3r" target="_blank" rel="noopener noreferrer" className="col dark-gray width-120 py-2 text-decoration-none">
             <FontAwesomeIcon

@@ -18,7 +18,7 @@ export default function BlogPost({data}) {
         <div className="clearfix mx-5">
           <h1 style={{
             margin: "0 auto",
-            maxWidth: "900px",
+            maxWidth: "1000px",
             fontFamily: "Julius Sans One, sans-serif",
           }}>
             {post.frontmatter.title}
@@ -36,7 +36,7 @@ export default function BlogPost({data}) {
       <SEO title={post.frontmatter.title} description={post.excerpt} />
       <div style={{
         margin: "0 auto",
-        maxWidth: "700px",
+        maxWidth: "800px",
         fontFamily: "Noto Serif TC, serif",
         fontSize: "18px",
         }} className="my-5">

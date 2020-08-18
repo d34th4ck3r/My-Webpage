@@ -24,11 +24,11 @@ export default function ProjectsPage({data}) {
     }
     >
       <SEO title="Projects" description="Need help with AI or Architecture? Reach out to me." />
-      <div className="mx-auto my-5" style={{
-        width: `50%`
-      }}>
+      <div className="mx-md-auto my-5" style={{
+        maxWidth: "800px"
+      }} >
         {data.github.viewer.repositories.nodes.map( (node) => (
-        <div className="my-3">
+        <div className="my-3" key={node.name}>
         { node.description ?
         <div>
           <div className="mx-1">
@@ -45,7 +45,9 @@ export default function ProjectsPage({data}) {
                 color: `#999`
               }}>
                 {node.languages.nodes.map( (language) => (
-                  <span className="ml-2"><u>{language.name}</u></span>
+                  <span className="ml-2" key={language.name}>
+                    <u>{language.name}</u>
+                  </span>
                 ))}
               </div>
             </div>

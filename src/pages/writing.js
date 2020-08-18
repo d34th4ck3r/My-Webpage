@@ -26,12 +26,12 @@ export default function WritingPage({data}) {
     >
       <SEO title="Writing" description="Articles about my epiphanies." />
       <div className="mx-auto my-5" style={{
-        width: `50%`
+        maxWidth: "800px"
       }}>
         {data.allMdx.edges.map( ({node}) => (
-          <div>
+          <div key={node.frontmatter.title}>
             <div className="mx-1">
-              <div className="mx-auto">
+              <div>
                   <Link to={node.fields.slug} className="text-decoration-none">
                     <h5 className="align-items-center">
                       {node.frontmatter.title}
@@ -43,19 +43,24 @@ export default function WritingPage({data}) {
                   color: `#999`
               }}>
                 {node.frontmatter.tags.map( (tag) => (
-                  <span className="mr-2"><u>{tag}</u></span>
+                  <span className="mr-2" key={tag}>
+                    <u>{tag}</u>
+                  </span>
               ))}
               </div>
               { node.frontmatter.thumbnail ?
-                <div className="container my-2" style={{
+                <div className="container-fluid my-2" style={{
                     fontSize: `15px`,
                     color: `#AAA`
                   }}>
-                  <div class="row">
+                  <div className="row">
                     <div className="col-mx-auto my-1" >
                       <Img fluid={node.frontmatter.thumbnail.childImageSharp.fluid} style={{width: "200px", height: "100px"}} />
                     </div>
-                    <div className="col ">
+                    <div className="col" style={{
+                      maxHeight: `110px`,
+                      overflow: `hidden`,
+                    }}>
                       {node.excerpt}
                     </div>
                   </div>

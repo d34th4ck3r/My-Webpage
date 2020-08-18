@@ -56,5 +56,6 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-sitemap`,
+    `saber-plugin-git-modification-time`,
   ],
 }

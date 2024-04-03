@@ -2,7 +2,7 @@
   "name": "d34th4ck3r",
   "private": true,
   "description": "Gautam's internet corner.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Gautam Bajaj <mail@gautambajaj.com>",
   "dependencies": {
     "@emotion/core": "^10.0.28",

@@ -1,15 +1,13 @@
 import React from "react"
 import Layout from "../components/layout"
-import { graphql } from 'gatsby'
 import { MDXProvider } from "@mdx-js/react"
-import { MDXRenderer } from "gatsby-plugin-mdx"
+import { graphql } from 'gatsby'
 import { Link } from "gatsby"
-import { ReactTinyLink } from 'react-tiny-link'
 import SEO from "../components/seo"
 
-const shortcodes = { Link, ReactTinyLink }
+const shortcodes = { Link }
 
-export default function BlogPost({data}) {
+export default function BlogPost({data , children}) {
   const post = data.mdx
   return (
     <Layout
@@ -40,7 +38,7 @@ export default function BlogPost({data}) {
         fontSize: "18px",
         }} className="my-5 mx-3 mx-md-auto">
         <MDXProvider components={shortcodes}>
-          <MDXRenderer>{post.body}</MDXRenderer>
+          {children}
         </MDXProvider>
       </div>
     </Layout>
@@ -48,14 +46,19 @@ export default function BlogPost({data}) {
 }
 
 export const query = graphql`
-  query($slug: String!) {
-    mdx(fields: { slug: { eq: $slug } }) {
+  query($id: String!) {
+    mdx(id: { eq: $id }) {
       body
       frontmatter {
         title
         tags
       }
-      timeToRead
+      timeToRead {
+        minutes
+        text
+        time
+        words
+      }
       fields {
         lastUpdated(formatString: "MMMM Do, YYYY")
       }

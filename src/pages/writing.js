@@ -88,7 +88,7 @@ export default function WritingPage({data}) {
 
 export const query = graphql`
 query Articles {
-  allMdx(sort: {order: DESC, fields: fileAbsolutePath}) {
+  allMdx {
     edges {
       node {
         frontmatter {

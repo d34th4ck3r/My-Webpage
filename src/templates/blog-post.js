@@ -25,7 +25,7 @@ export default function BlogPost({data , children}) {
             color: `#AAA`,
             fontFamily: "Julius Sans One, sans-serif",
           }}>
-            {post.fields.lastUpdated}
+            {post.frontmatter.updated_at}
         </div>
         </div>
       </div>
@@ -52,15 +52,7 @@ export const query = graphql`
       frontmatter {
         title
         tags
-      }
-      timeToRead {
-        minutes
-        text
-        time
-        words
-      }
-      fields {
-        lastUpdated(formatString: "MMMM Do, YYYY")
+        updated_at
       }
       excerpt(pruneLength: 400)
     }

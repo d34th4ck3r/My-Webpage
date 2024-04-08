@@ -9,10 +9,10 @@ export default function Footer(){
       fontSize: `12px`,
       height: `30px`
     }}>
-      <div className="float-left h-100 px-2 d-flex align-items-center">
+      <div className="float-start h-100 px-2 d-flex align-items-center">
         <span>© {(new Date().getFullYear())} Gautam Bajaj</span>
       </div>
-      <div className="float-right h-100 px-2 d-flex align-items-center">
+      <div className="float-end h-100 px-2 d-flex align-items-center">
         Inspired From: 
         <a href="https://www.ybrikman.com/" target="_blank" rel="noopener noreferrer" className="col dark-gray width-120 py-2 px-1" style={{
           color: `#444`

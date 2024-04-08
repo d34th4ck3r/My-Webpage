@@ -32,7 +32,7 @@ export default function ProjectsPage({data}) {
         { node.description ?
         <div>
           <div className="mx-1">
-            <div className="mx-auto d-flex align-items-center">
+            <div className="mx-auto d-flex align-items-center justify-content-between">
               <div className="align-items-center">
                 <a href={node.url} className="text-decoration-none" target="_blank" rel="noopener noreferrer">
                   <h5 className="align-items-center">
@@ -45,7 +45,7 @@ export default function ProjectsPage({data}) {
                 color: `#999`
               }}>
                 {node.languages.nodes.map( (language) => (
-                  <span className="ml-2" key={language.name}>
+                  <span className="mx-1" key={language.name}>
                     <u>{language.name}</u>
                   </span>
                 ))}
@@ -61,6 +61,7 @@ export default function ProjectsPage({data}) {
           <div>
             <hr style={{
               backgroundColor: `white`,
+              height: `3px`
             }}/>
           </div>
         </div>

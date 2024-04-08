@@ -30,7 +30,7 @@ export default class PersonalInfo extends React.Component {
     super(props);
     this.state = {
       nodeTitle: "About Me",
-      nodeDescription: "I am a Trilingual(English, 日本語, हिंदी) Software Engineer/Architect, based out of Tokyo, who started writing code at the age of 13 and being writing it ever since. Currently, I am working as a Senior Software Engineer(Data Engineering) for an American Company and advisor for various startups. The buzzwords for me(right now) are Reinforcement Learning, Kubernetes, and Blockchain Protocols. I frequently write about these topics which I plan to start posting here soon. Besides computer-science related stuff, I also like discussing philosophy and psychology. Feel free to send a message, if you want to start a discussion on any of these topics."
+      nodeDescription: "I am a Trilingual(English, 日本語, हिंदी) Software Engineer/Architect, based out of Tokyo, who started writing code at the age of 13 and being writing it ever since. Currently, I am working as a Senior Software Engineer(Machine Learning Engineering) for an American Company and as an advisor for various startups. The buzzwords for me(right now) are Reinforcement Learning, Serverless, and Blockchain Protocols. I frequently write about these topics which I plan to start posting here soon. Besides computer-science related stuff, I also like discussing philosophy and psychology. Feel free to send a message, if you want to start a discussion on any of these topics."
     }
   }
 
@@ -53,15 +53,15 @@ export default class PersonalInfo extends React.Component {
         </div>
         <div className="row row-cols-1 d-none d-md-block">
           <div className="node-btn button d-flex align-items-center" role="button" tabIndex={-1} id="about-me" onClick={(e) => this.setCurrentNode(e)} onKeyPress={this.handleKeyPress}>
-            <div className="w-100 text-right mr-2" id="about-me-title">
+            <div className="w-100 text-end mr-2" id="about-me-title">
               About Me
             </div>
             <div hidden={true} id="about-me-desc">
-              I am a Trilingual(English, 日本語, हिंदी) Software Engineer/Architect, based out of Tokyo, who started writing code at the age of 13 and being writing it ever since. Currently, I am working as a Senior Software Engineer(Machine Engineering) for an American Company and as advisor for various startups. The buzzwords for me(right now) are Reinforcement Learning, Serverless, and Blockchain Protocols. I frequently write about these topics which I plan to start posting here soon. Besides computer-science related stuff, I also like discussing philosophy and psychology. Feel free to send a message, if you want to start a discussion on any of these topics.
+            I am a Trilingual(English, 日本語, हिंदी) Software Engineer/Architect, based out of Tokyo, who started writing code at the age of 13 and being writing it ever since. Currently, I am working as a Senior Software Engineer(Machine Learning Engineering) for an American Company and as an advisor for various startups. The buzzwords for me(right now) are Reinforcement Learning, Serverless, and Blockchain Protocols. I frequently write about these topics which I plan to start posting here soon. Besides computer-science related stuff, I also like discussing philosophy and psychology. Feel free to send a message, if you want to start a discussion on any of these topics.
             </div>
           </div>
           <div className="node-btn button d-flex align-items-center" role="button" tabIndex={-1} id="work-ex" onClick={(e) => this.setCurrentNode(e)} onKeyPress={this.handleKeyPress}>
-            <div className="w-100 text-right mr-2" id="work-ex-title">
+            <div className="w-100 text-end mr-2" id="work-ex-title">
               Work Experience
             </div>
             <div hidden={true} id="work-ex-desc">
@@ -70,7 +70,7 @@ export default class PersonalInfo extends React.Component {
             </div>
           </div>
           <div className="node-btn button d-flex align-items-center" role="button" tabIndex={-1} id="open-src" onClick={(e) => this.setCurrentNode(e)} onKeyPress={this.handleKeyPress}>
-            <div className="w-100 text-right mr-2" id="open-src-title">
+            <div className="w-100 text-end mr-2" id="open-src-title">
               Open Source Contributions
             </div>
             <div hidden={true} id="open-src-desc">
@@ -78,7 +78,7 @@ export default class PersonalInfo extends React.Component {
             </div>
           </div>
           <div className="node-btn button d-flex align-items-center" role="button" tabIndex={-1} id="interests" onClick={(e) => this.setCurrentNode(e)} onKeyPress={this.handleKeyPress}>
-            <div className="w-100 text-right mr-2" id="interests-title">
+            <div className="w-100 text-end mr-2" id="interests-title">
               Interests
             </div>
             <div hidden={true} id="interests-desc">

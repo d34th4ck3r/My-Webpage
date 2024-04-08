@@ -43,8 +43,8 @@ export default function WritingPage({data}) {
                   color: `#999`
               }}>
                 {node.frontmatter.tags.map( (tag) => (
-                  <span className="mr-2" key={tag}>
-                    <u>{tag}</u>
+                  <span className="badge bg-dark pr-5" key={tag}>
+                    <u>#{tag}</u>
                   </span>
               ))}
               </div>
@@ -54,7 +54,7 @@ export default function WritingPage({data}) {
                     color: `#AAA`
                   }}>
                   <div className="row">
-                    <div className="col-mx-auto my-1" >
+                    <div className="col-md-auto my-2" >
                       <Img fluid={node.frontmatter.thumbnail.childImageSharp.fluid} style={{width: "200px", height: "100px"}} />
                     </div>
                     <div className="col" style={{

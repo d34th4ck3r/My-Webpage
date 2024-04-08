@@ -6,10 +6,8 @@
 
 // You can delete this file if you're not using it
 
-const readingTime = require(`reading-time`)
 const {createFilePath} =  require(`gatsby-source-filesystem`)
 const path = require(`path`)
-// const {execa} = require('execa')
 const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
 
 exports.onCreateNode = ({node, getNode, actions}) => {
@@ -18,29 +16,11 @@ exports.onCreateNode = ({node, getNode, actions}) => {
   if(node.internal.type === `Mdx`){
 
     const slug = createFilePath({node, getNode})
-    // const { stdout } = execa.sync('git', [
-    //   'log',
-    //   '-1',
-    //   '--pretty=format:%aI',
-    //   '--',
-    //   node.fileAbsolutePath
-    // ])
-    const { stdout } = "2024-03-31T18:30:50+09:00"
 
     createNodeField({
       node,
       name: `slug`,
       value: `/writing` + slug,
-    })
-    createNodeField({
-      node,
-      name: `lastUpdated`,
-      value: new Date(stdout),
-    })
-    createNodeField({
-      node,
-      name: `timeToRead`,
-      value: readingTime(node.body)
     })
   }
 }
@@ -88,18 +68,3 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 }
-
-// exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-//   if(stage === "build-html"){
-//     actions.setWebpackConfig({
-//       module: {
-//         rules: [
-//           {
-//             test: `${process.env.PWD}` + '/node_modules/react-tiny-link/',
-//             use: loaders.null(),
-//           },
-//         ],
-//       },
-//     })
-//   }
-// }

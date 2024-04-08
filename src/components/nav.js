@@ -17,7 +17,7 @@ export function MyDropdown(props) {
 export default function NavigationBar() {
 
   return (
-    <Navbar className="px-0 py-0" expand="lg" style={{
+    <Navbar className="px-0 py-0 justify-content-between" expand="lg" justify-content-between style={{
       borderBottom: `1px solid white`,
       borderColor: `rgb(111,111,111)`,
     }}>
@@ -34,20 +34,22 @@ export default function NavigationBar() {
           style={{color:`#AAA`, fontSize:`30px`}}
         />
       </Navbar.Toggle>
-      <Navbar.Collapse id="basic-navbar-nav">
-        <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
-            <Link className="nav-link main button px-5" to={'/writing'} style={{color: `white`}}>
-              WRITING
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link main button px-5" to={'/projects'} style={{color: `white`}}>
-              PROJECTS
-            </Link>
-          </li>
-        </ul>
-      </Navbar.Collapse>
+      <div>
+        <Navbar.Collapse id="basic-navbar-nav">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <Link className="nav-link main button px-5" to={'/writing'} style={{color: `white`}}>
+                WRITING
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link main button px-5" to={'/projects'} style={{color: `white`}}>
+                PROJECTS
+              </Link>
+            </li>
+          </ul>
+        </Navbar.Collapse>
+      </div>
     </Navbar>
   );
 }

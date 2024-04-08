@@ -43,7 +43,7 @@ export default function WritingPage({data}) {
                   color: `#999`
               }}>
                 {node.frontmatter.tags.map( (tag) => (
-                  <span className="badge bg-dark pr-5" key={tag}>
+                  <span className="badge bg-dark" key={tag}>
                     <u>#{tag}</u>
                   </span>
               ))}

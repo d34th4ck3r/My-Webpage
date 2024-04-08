@@ -17,7 +17,7 @@ export function MyDropdown(props) {
 export default function NavigationBar() {
 
   return (
-    <Navbar className="px-0 py-0 justify-content-between" expand="lg" justify-content-between style={{
+    <Navbar className="px-0 py-0 justify-content-between" expand="lg" style={{
       borderBottom: `1px solid white`,
       borderColor: `rgb(111,111,111)`,
     }}>

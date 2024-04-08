@@ -48,11 +48,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild('Error loading MDX result', result.errors)
   }
 
-
-  console.log("IS THIS GETTING PRINTED?")
   // Create blog post pages.
   const posts = result.data.allMdx.nodes
-  console.log(posts[0].frontmatter.slug) 
 
   // you'll call `createPage` for each result
   posts.forEach(node => {

@@ -4,3 +4,4 @@ out
 public
 *.code-workspace
 .cache
+Temp
